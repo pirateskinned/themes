@@ -103,6 +103,7 @@
 <link href="https://assets.tumblr.com/client/prod/standalone/blog-network-npf/index.build.css" rel="stylesheet">
 <link rel="stylesheet" href="https://npf-images-v3.github.io/recon.css">
 <script src="https://glenthemes.s3.eu-west-2.amazonaws.com/other/npf-images-v3-ps-mod.js"></script>
+<style tmblr-npf>
 :root {
     --NPF-Caption-Spacing:20px;
     --NPF-Image-Spacing:1px;
