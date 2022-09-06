@@ -741,6 +741,10 @@ video, .video, .video iframe {
             height:80px;
             background-size:cover;
         }
+        
+.spotify_audio_player {
+    height:80px;
+}
 
 /* --- asks --- */
 
