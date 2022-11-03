@@ -193,9 +193,9 @@ a {
         text-decoration:none;
     }
    
-p a, li a
+p a, li a, .side-desc a
 {border-bottom:2px solid {color:border};}
-p a:hover, li a:hover
+p a:hover, li a:hover, .side-desc a:hover
 {border-bottom:2px solid {color:accent};}
 
 img {
