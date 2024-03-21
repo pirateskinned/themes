@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<head>
+
+<!--
+
+    theme 89 by pirateskinned
+    
+    please don't:  edit & repost / claim as your own
+    please don't:  delete or move the credit
+    please don't:  steal bits of coding
+
+-->
+
+<title>{Title}</title>
+
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+
+<!-- meta tags -->
+
+<meta name="image:background" content="">
+<meta name="image:icon" content="">
+<meta name="image:icon 2" content="">
+
+<meta name="color:background" content="#f9f9f9"/>
+<meta name="color:background grid" content="#8d6556"/>
+<meta name="color:posts" content="#ffffff"/>
+<meta name="color:border" content="#c1aea4"/>
+<meta name="color:text" content="#4f4e4e"/>
+<meta name="color:accent" content="#c8d4c0"/>
+
+<meta name="text:font size" content="14px">
+<meta name="text:post size" content="480px">
+
+<meta name="text:title icon" content="heart">
+<meta name="text:sidebar subtitle" content="subtitle">
+
+<meta name="text:extra link url" content="/">
+<meta name="text:extra link title" content="extra link">
+
+<!-- fonts -->
+
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Work+Sans:wght@400;600&family=DM+Serif+Display:wght@400&?family=Poppins:wght@700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=poppins@700&display=swap" rel="stylesheet"> 
+
+<!-- scripts & stylesheets -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link href="https://static.tumblr.com/0podkko/oDSpg7y88/photosets.css" rel="stylesheet">
+<script src="https://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
+<script src="https://static.tumblr.com/0podkko/aZZqe4033/customaudio.min.js"></script>
+<script src="https://rawgit.com/robinpx/tumblr/master/scripts/flexibleFrames/flexibleFrames.js"></script>
+<link href="https://pirateskinned.github.io/tumblr/base_0823/css/posts.css" rel="stylesheet">
+<script src="https://pirateskinned.github.io/tumblr/base_0823/scripts/base.js"></script>
+
+<style>
+:root {
+    --font-size:{text:font size};
+    --post-size:{text:post size};
+    
+    --background:{color:background};
+    --posts:{color:posts};
+    --border:{color:border};
+    --text:{color:text};
+    --accent:{color:accent};
+    
+    --rgb-text:{RGBcolor:text};
+    --rgb-accent:{RGBcolor:accent};
+}
+</style>
+
+<style type="text/css">
+
+iframe.tmblr-iframe {
+    z-index:999999!important;
+    top:10px!important;
+    right:10px!important;
+    transform:scale(0.7);
+    transform-origin:100% 0;
+}
+
+/* --- tooltips & scrollbars --- */
+
+#s-m-t-tooltip {
+    position:absolute;
+    margin-top: 15px;
+    z-index:9999;
+    padding:3px 7px;
+    background:{color:posts};
+    color:{color:text};
+    font-size:{text:font size};
+    border:1px solid {color:border};
+    box-shadow:0px 0px 5px rgba(78, 78, 78, 0.1);
+}
+
+::-webkit-scrollbar-thumb {background-color:{color:accent};}
+::-webkit-scrollbar {background-color:transparent; width:1px; height:1px;}
+
+/* --- basics --- */
+
+body {
+    background:{color:background};
+    background-image: linear-gradient({color:background grid} 1px, transparent 1px), linear-gradient(90deg, {color:background grid} 1px, transparent 1px);
+    background-size:22px 22px;
+    background-position:center center;
+    background-attachment:fixed;
+    color:{color:text};
+    font-family: 'Work Sans', sans-serif;
+    font-size:{text:font size};
+    line-height:1.5em;
+    font-weight:400;
+    text-align:left;
+    margin:0;
+}
+
+.background-block {
+    position:fixed;
+    z-index:1;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    height:66%;
+    background-color:{color:background};
+    border-top:1px solid {color:background grid};
+    background-image:url('{image:background}');
+    background-position:center center;
+    background-attachment:fixed;
+    background-repeat:repeat;
+}
+
+a {
+    color:{color:text};
+    text-decoration:none;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+
+    a:hover {
+        color:{color:text};
+        text-decoration:none;
+    }
+   
+p a, li a, .side-desc a
+{border-bottom:1px solid {color:accent};}
+p a:hover, li a:hover, .side-desc a:hover
+{border-bottom:1px solid {color:border};}
+
+img {
+    border:none;
+    text-decoration:none;
+}
+
+b, strong, bold {
+    font-weight:700;
+}
+
+u {
+    text-decoration:none;
+}
+
+    .firstletter, u {
+        display:block;
+        float:left;
+        width:30px;
+        height:30px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-weight:700;
+        text-transform:uppercase;
+        font-size:1.5em;
+        font-family:'Inconsolata', monospace;
+        margin:0px 10px 0px 0px;
+        color:{color:accent};
+        border:1px solid {color:border};
+        border-radius:8px;
+    }
+
+s, strike {
+    text-decoration-color:{color:accent};
+}
+
+small, sub, sup, big {
+    font-size:1em;
+    line-height:1.5em;
+    vertical-align:baseline;
+}
+
+blockquote {
+    width:calc(100% - 30px);
+    padding:0px 5px 0px 15px;
+    border-left:1px solid {color:border};
+    margin:0px 0px 0px 10px;
+}
+
+    blockquote img {
+        max-width:calc(100% - 40px);
+        height:auto;
+    }
+    
+        blockquote blockquote {
+            margin-right:0px;
+        }
+        
+            blockquote blockquote img {
+                max-width:calc(100% - 50px);
+                height:auto;
+                margin-top:10px;
+            }
+
+pre {
+    font-family: 'Inconsolata', monospace;
+    margin:0px;
+    background-color:rgba({RGBcolor:text},0.05);
+    padding:10px;
+    border-radius:10px;
+}
+
+    pre a {color:{color:accent};}
+
+ul, ol {
+    width:calc(100% - 35px);
+    margin:0px 0px 0px 20px;
+    padding-left:15px;
+}
+
+    ul li {
+        list-style-type:square;
+    }
+    
+    ol li {
+        list-style-type:lower-roman;
+    }
+    
+    ul ul {
+        width:calc({text:post size} - 120px);
+    }
+        
+hr {
+    border:none;
+    border-bottom:1px solid {color:border};
+    width:100%;
+    margin:0px;
+}
+
+/* --- header styles --- */
+
+h1 {
+    margin:0px;
+    width:100%;
+    font-size:2em;
+    line-height:1.2em;
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    text-shadow:0px 0px 5px rgba({RGBcolor:accent},0.95);
+}
+
+    h1.tagpage {
+        font-weight:400;
+        margin:0px 0px 50px 0px;
+    }
+
+h2 {
+    font-weight:600;
+    text-align:left;
+    font-size:1.5em;
+}
+
+    h2 b, b h2, h2 i, i h2,
+    h2 strong, strong h2, h2 em, em h2 {
+        color:{color:text};
+    }
+    
+h3 {
+    font-size:1.4em;
+    margin:10px 0px;
+    font-weight:400;
+    color:{color:accent};
+}
+
+h4 {
+    width:100%;
+    font-weight:700;
+    font-size:1.4em;
+    line-height:1em;
+    margin:0px;
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    text-shadow:0px 0px 5px rgba({RGBcolor:accent},0.95);
+}
+    
+h5 {
+    color:{color:posts};
+    font-family:'Inconsolata', monospace;
+    margin:0px;
+    font-weight:normal;
+    font-size:1.1em;
+}
+
+.ti {
+    color:{color:text};
+    font-size:18px;
+    height:18px;
+    width:18px;
+}
+
+/* --- container --- */
+
+.container {
+    position:relative;
+    z-index:400;
+    left:calc(50vw - 550px);
+    top:150px;
+    width:1100px;
+    height:auto;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:flex-start;
+    justify-content:center;
+    gap:100px;
+}
+        
+/* --- sidebar --- */
+
+.side {
+    position:sticky;
+    top:150px;
+    width:280px;
+    height:auto;
+    padding:20px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    align-content:flex-start;
+    justify-content:space-between;
+    gap:20px 0px;
+    background-color:{color:posts};
+    border:1px solid {color:border};
+    box-shadow:0px 0px 5px rgba(78, 78, 78, 0.1);
+}
+
+.side-title {
+    position:relative;
+    width:calc(100% + 40px);
+    height:40px;
+    margin:-20px -20px 0px -20px;
+    box-sizing:border-box;
+    padding:0px 20px;
+    border-bottom:1px solid {color:border};
+    background-color:{color:accent};
+    color:{color:posts};
+    font-family:'Inconsolata', monospace;
+    font-size:0.9em;
+    letter-spacing:1px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+    .side-title .ti {
+        color:{color:posts};
+        font-size:18px;
+        width:18px;
+        height:18px;
+        font-weight:normal;
+    }
+
+.side-icon-1 {
+    position:relative;
+    z-index:10;
+    width:60px;
+    height:60px;
+    border-radius:5px;
+    border:1px solid {color:border};
+    box-shadow:0px 0px 3px rgba(178,178,178,0.1);
+    background-image:url('{image:icon}');
+    background-size:cover;
+    background-position:center center;
+}
+
+.side-icon-2 {
+    position:relative;
+    z-index:10;
+    width:60px;
+    height:60px;
+    border-radius:5px;
+    border:1px solid {color:border};
+    box-shadow:0px 0px 3px rgba(178,178,178,0.1);
+    background-image:url('{image:icon 2}');
+    background-size:cover;
+    background-position:center center;
+}
+
+.side-name {
+    position:relative;
+    width:calc(100% - 80px);
+    height:60px;
+    display:flex;
+    align-content:center;
+    flex-wrap:wrap;
+    gap:0px;
+}
+
+    .side-name .side-username {
+        width:100%;
+        font-size:1.1em;
+        line-height:1em;
+        font-weight:700;
+        font-family:'Poppins', sans-serif;
+    }
+    
+    .side-name span {
+        color:rgba({RGBcolor:text},0.75);
+        font-family:'Inconsolata', monospace;
+        font-size:0.9em;
+        letter-spacing:1px;
+    }
+
+.side-desc {
+    position:relative;
+    width:calc(100% - 80px);
+}
+    
+        .side-desc b {
+            color:{color:accent};
+        }
+
+.side-links {
+    position:relative;
+    width:100%;
+    height:auto;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:flex-start;
+    gap:10px;
+}
+
+    .side-links a {
+        width:calc(50% - 5px);
+        height:30px;
+        border:1px solid {color:border};
+        display:flex;
+        align-items:center;
+        justify-content:flex-start;
+        gap:10px;
+        transition:all ease 0.5s;
+        background-color:{color:posts};
+        box-shadow:0px 0px 3px rgba(178,178,178,0.1);
+        box-sizing:border-box;
+        padding:0px 10px;
+    }
+    
+        .side-links a .ti {transition:all ease 0.5s;}
+    
+        .side-links a:hover {
+            background-color:{color:border};
+            color:{color:posts};
+        }
+    
+        .side-links a:hover .ti {
+            color:{color:posts};
+        }
+
+
+/* --- posts --- */
+
+.entries, article {width:calc(var(--post-size) + 2px);}
+
+.post, .pagenotes {
+    border-radius:0px;
+    box-shadow:0px 0px 5px rgba(78, 78, 78, 0.1);
+}
+
+.post-icon {
+    margin:0px;
+    width:40px;
+    height:40px;
+    border-radius:5px;
+    box-shadow:none;
+}
+
+.post-top {
+    position:sticky;
+    z-index:50;
+    top:-1px;
+    background-color:var(--posts);
+    border-bottom:1px solid var(--border);
+    border-radius:0px;
+}
+    
+.post-top-right {
+    width:calc(100% - 50px);
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+}
+
+    .post-top-reblogger {
+        font-weight:400;
+        color:rgba({RGBcolor:text},0.9);
+        gap:5px;
+    }
+    
+        .post-top-reblogger b {
+            font-weight:700;
+            color:rgba({RGBcolor:text},1);
+        }
+        
+        .post-top-reblogger a {
+            font-weight:700;
+            color:rgba({RGBcolor:text},0.9);
+        }
+        
+.caption hr:first-of-type {border-bottom:1px solid transparent;}
+
+/* --- pagination --- */
+
+.pagination {
+    position:relative;
+    left:0px!important;
+    margin:0px 0px 80px 0px;
+    width:{text:post size};
+    height:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+        
+    .pagination a {
+        margin:0px 10px;
+        width:140px;
+        height:auto;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:20px;
+        background-color:{color:posts};
+        border:1px solid {color:border};
+        box-shadow:0px 0px 5px rgba(78, 78, 78, 0.1);
+    }
+        
+        .pagination a .ti {
+            font-size:20px;
+            width:20px;
+            height:20px;
+        }
+        
+        .pagination a:hover {
+            background-color:{color:accent};
+            color:{color:posts};
+        }
+        
+        .pagination a:hover i {
+            color:{color:posts};
+        }
+        
+{CustomCSS}
+
+</style>
+</head>
+<body>
+
+<div class="background-block"></div>
+
+<div class="container">
+    
+    <!-- sidebar -->
+    
+    <div class="side">
+    
+        <div class="side-title">
+            {Title}
+            
+            <i class="ti ti-{text:title icon}"></i>
+        </div>
+        
+        <div class="side-icon-1"></div>
+        
+        <div class="side-name">
+            <div class="side-username">@{name}</div>
+            <span>{text:sidebar subtitle}</span>
+        </div>
+        
+        <div class="side-icon-2"></div>
+        
+        <div class="side-desc">
+            {Description}
+        </div>
+        
+        <div class="side-links">
+            <a href="/">
+                <i class="ti ti-home"></i> home
+            </a>
+            
+            <a href="/ask">
+                <i class="ti ti-mail"></i> message
+            </a>
+            
+            <a href="/archive">
+                <i class="ti ti-archive"></i> archive
+            </a>
+            
+            <a href="{text:extra link url}">
+                <i class="ti ti-star"></i> {text:extra link title}
+            </a>
+        </div>
+    
+    </div>
+
+    
+<!-- start of posts -->
+
+<div class="entries">
+
+{block:TagPage}
+    <h1 class="tagpage">showing posts tagged as <b>#{Tag}</b></h1>
+{/block:TagPage}
+
+{block:Posts inlineMediaWidth="1280" inlineNestedMediaWidth="1280"}
+
+<article id="{PostID}" post-type="{PostType}">
+
+<div class="post post-{PostType}">
+
+{block:PinnedPostLabel}
+    <div class="pinned">
+        <i class="ti ti-pinned-filled"></i> {PinnedPostLabel}
+    </div>
+{/block:PinnedPostLabel}
+
+{block:Date}
+    <div class="post-top">
+    
+    <div class="post-icon">
+        {block:NotReblog}
+            <img src="{PortraitURL-128}">
+        {/block:NotReblog}
+        
+        {block:RebloggedFrom}
+            <img src="{ReblogParentPortraitURL-128}">
+        {/block:RebloggedFrom}
+    </div>
+        
+    <div class="post-top-right">
+            
+        <div class="post-top-reblogger">
+            <b>{PostAuthorName}</b>
+            
+            {block:RebloggedFrom}
+                reblogged <a href="{ReblogParentURL}">{ReblogParentName}</a>
+            {/block:RebloggedFrom}
+        </div>
+            
+        <div class="post-top-dots">
+            <a href="{Permalink}">
+                <i class="ti ti-dots"></i>
+            </a>
+        </div>
+            
+        <a class="post-top-date" href="{Permalink}">
+            {block:PermalinkPage}posted {/block:PermalinkPage}{TimeAgo} {block:PermalinkPage}on {DayofWeek}, {Month} {DayOfMonth}{DayOfMonthSuffix} {Year}{/block:PermalinkPage}
+        </a>
+        
+    </div>
+        
+        
+    </div>
+{/block:Date}
+
+{block:Text}
+<!-- post type: text -->
+<div class="caption">
+
+    {block:Title}
+        <hr>
+        
+        <div class="caption-inner">
+            <h1>{Title}</h1>
+        </div>
+    {/block:Title}
+
+    {block:NotReblog}
+        <hr>
+            
+        {block:Body}
+            <div class="caption-inner">
+                {block:Date}
+                    <div class="tumblr_blog">    
+                        <img class="tumblr_avatar" src="{PortraitURL-64}">
+                        <a href="{Permalink}">{Name}</a>
+                    </div>
+                {/block:Date}
+            
+                {Body}
+                
+                {block:More}
+                    <p>
+                        <a href="{Permalink}">Keep reading</a>
+                    </p>
+                {/block:More}
+            </div>
+        {/block:Body}
+    {/block:NotReblog}
+
+
+    {block:RebloggedFrom}
+        
+        
+        {block:Reblogs}
+            {block:isOriginalEntry}
+                <hr>
+                
+                {block:Body}
+                    <div class="caption-inner">
+                        <div class="tumblr_blog"> 
+                            <img class="tumblr_avatar" src="{ReblogRootPortraitURL-64}">
+                            <a {block:IsActive}href="{Permalink}"{/block:IsActive}>{ReblogRootName}</a>
+                            {block:IsDeactivated}
+                                <span class="deactivated">deactivated</span>
+                            {/block:IsDeactivated}
+                        </div>
+                    
+                        {Body}
+                    </div>
+                {/block:Body}
+            {/block:isOriginalEntry}
+                
+            {block:isNotOriginalEntry}
+                <hr>
+                    
+                <div class="caption-inner">
+                    <div class="tumblr_blog">    
+                        <img class="tumblr_avatar" src="{PortraitURL-64}">
+                        <a {block:IsActive}href="{Permalink}"{/block:IsActive}>{Username}</a>
+                        {block:IsDeactivated}
+                            <span class="deactivated">deactivated</span>
+                        {/block:IsDeactivated}
+                    </div>
+                                    
+                    {Body}
+                </div>
+            {/block:isNotOriginalEntry}
+        {/block:Reblogs}
+    {/block:RebloggedFrom}
+    
+</div>
+{/block:Text}
+
+{block:Photo}
+<!-- post type: single photo -->
+    <div class="caption">
+        {block:NotReblog}
+            <hr>
+            
+            <div class="tumblr_blog">    
+                <img class="tumblr_avatar" src="{PortraitURL-64}">
+                <a href="{Permalink}">{Name}</a>
+            </div>
+            
+            <div class="photo-p">
+                <img src="{PhotoURL-1280}" alt="{PhotoAlt}">
+            </div>
+            
+            {block:Caption}
+                <div class="caption-inner">
+                    {Caption}
+                    
+                    {block:More}
+                        <p>
+                            <a href="{Permalink}">Keep reading</a>
+                        </p>
+                    {/block:More}
+                </div>
+            {/block:Caption}
+        {/block:NotReblog}
+    
+        {block:RebloggedFrom}
+            <hr>
+            
+            <div class="tumblr_blog"> 
+                <img class="tumblr_avatar" src="{ReblogRootPortraitURL-64}">
+                <a href="{Permalink}">{ReblogRootName}</a>
+            </div>
+                    
+            <div class="photo-p">
+                <img src="{PhotoURL-1280}" alt="{PhotoAlt}">
+            </div>
+            
+            {block:Reblogs}
+                {block:isOriginalEntry}
+                    {block:Caption}
+                        <div class="caption-inner">
+                            {Body}
+                        </div>
+                    {/block:Caption}
+                {/block:isOriginalEntry}
+                
+                {block:isNotOriginalEntry}
+                    <div class="caption-inner-reblogs">
+                        <div class="tumblr_blog">    
+                            <img class="tumblr_avatar" src="{PortraitURL-64}">
+                            <a {block:IsActive}href="{Permalink}"{/block:IsActive}>{Username}</a>
+                            {block:IsDeactivated}
+                                <span class="deactivated">deactivated</span>
+                            {/block:IsDeactivated}
+                        </div>
+                                    
+                        {Body}
+                    </div>
+                {/block:isNotOriginalEntry}
+            {/block:Reblogs}
+        {/block:RebloggedFrom}
+    </div>
+{/block:Photo}
+
+{block:Photoset}
+    <!-- post type: photoset -->
+    <div class="caption">
+        {block:NotReblog}
+            <hr>
+        
+            <div class="tumblr_blog">    
+                <img class="tumblr_avatar" src="{PortraitURL-64}">
+                <a href="{Permalink}">{Name}</a>
+            </div>
+            
+            <div class="photoset-grid" photoset-layout="{PhotosetLayout}">
+                {block:Photos}
+                    <div data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}" data-lowres="{PhotoURL-700}" data-highres="{PhotoURL-HighRes}" onclick="lightbox(this)">
+                        <img src="{PhotoURL-HighRes}" />
+                    </div>
+                {/block:Photos}
+            </div>
+            
+            {block:Caption}
+                <div class="caption-inner">
+                    {Caption}
+                    
+                    {block:More}
+                        <p>
+                            <a href="{Permalink}">Keep reading</a>
+                        </p>
+                    {/block:More}
+                </div>
+            {/block:Caption}
+        {/block:NotReblog}
+    
+        {block:RebloggedFrom}
+            <hr>
+            
+            <div class="tumblr_blog"> 
+                <img class="tumblr_avatar" src="{ReblogRootPortraitURL-64}">
+                <a href="{Permalink}">{ReblogRootName}</a>
+            </div>
+                    
+            <div class="photoset-grid" photoset-layout="{PhotosetLayout}">
+                {block:Photos}
+                    <div data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}" data-lowres="{PhotoURL-500}" data-highres="{PhotoURL-HighRes}" onclick="lightbox(this)">
+                        <img src="{PhotoURL-HighRes}" />
+                    </div>
+                {/block:Photos}
+            </div>
+            
+            {block:Reblogs}
+                {block:isOriginalEntry}
+                    {block:Caption}
+                        <div class="caption-inner">
+                            {Body}
+                        </div>
+                    {/block:Caption}
+                {/block:isOriginalEntry}
+                
+                {block:isNotOriginalEntry}
+                    <div class="caption-inner-reblogs">
+                        <div class="tumblr_blog">    
+                            <img class="tumblr_avatar" src="{PortraitURL-64}">
+                            <a {block:IsActive}href="{Permalink}"{/block:IsActive}>{Username}</a>
+                            {block:IsDeactivated}
+                                <span class="deactivated">deactivated</span>
+                            {/block:IsDeactivated}
+                        </div>
+                                    
+                        {Body}
+                    </div>
+                {/block:isNotOriginalEntry}
+            {/block:Reblogs}
+        {/block:RebloggedFrom}
+    </div>
+{/block:Photoset}
+
+
+{block:Quote}
+<!-- post type: quote -->
+<div class="caption">
+    {block:NotReblog}
+        <hr>
+        
+        <div class="tumblr_blog">    
+            <img class="tumblr_avatar" src="{PortraitURL-64}">
+            <a href="{Permalink}">{Name}</a>
+        </div>
+    {/block:NotReblog}
+    
+    {block:RebloggedFrom}
+        <hr>
+        
+        {block:Reblogs}
+            <div class="tumblr_blog">    
+                <img class="tumblr_avatar" src="{ReblogRootPortraitURL-64}">
+                <a {block:IsActive}href="{ReblogRootURL}"{/block:IsActive}>{ReblogRootName}</a>
+                {block:IsDeactivated}
+                    <span class="deactivated">deactivated</span>
+                {/block:IsDeactivated}
+            </div>
+        {/block:Reblogs}
+    {/block:RebloggedFrom}
+    
+    <div class="caption-inner">
+        <div class="quote-p">{Quote}</div>
+        {block:Source}
+            <div class="source">{Source}</div>
+        {/block:Source}
+    </div>
+</div>
+{/block:Quote}
+
+{block:Link}
+<!-- post type: link -->
+<div class="caption">
+
+    {block:NotReblog}
+        <hr>
+    
+        <div class="tumblr_blog">    
+            <img class="tumblr_avatar" src="{PortraitURL-64}">
+            <a href="{Permalink}">{PostAuthorName}</a>
+        </div>
+            
+        <a {Target} href="{URL}" class="link-p" >
+            <div class="link-thumbnail" {block:Thumbnail}style="background-image:url('{Thumbnail-HighRes}');"{/block:Thumbnail}>
+                <h2>{Name}</h2>
+            </div>
+            
+            <div class="link-text">
+                {block:Excerpt}
+                    <p class="link-excerpt">{Excerpt}</p>
+                {/block:Excerpt}
+                
+                {block:Host}
+                    <p class="link-url">{Host}</p>
+                {/block:Host}
+            </div>
+        </a>
+            
+        {block:Description}
+            <div class="caption-inner">
+                {Description}
+                
+                {block:More}
+                    <p>
+                        <a href="{Permalink}">Keep reading</a>
+                    </p>
+                {/block:More}
+            </div>
+        {/block:Description}
+    {/block:NotReblog}
+
+
+    {block:RebloggedFrom}
+        <hr>
+        
+        <div class="tumblr_blog"> 
+            <img class="tumblr_avatar" src="{ReblogRootPortraitURL-64}">
+            <a {block:IsActive}href="{Permalink}"{/block:IsActive}>{ReblogRootName}</a>
+            {block:IsDeactivated}
+                <span class="deactivated">deactivated</span>
+            {/block:IsDeactivated}
+        </div>
+    
+        <a {Target} href="{URL}" class="link-p" >
+            <div class="link-thumbnail" {block:Thumbnail}style="background-image:url('{Thumbnail-HighRes}');"{/block:Thumbnail}>
+                <h2>{Name}</h2>
+            </div>
+                
+            <div class="link-text">
+                {block:Excerpt}
+                    <p class="link-excerpt">{Excerpt}</p>
+                {/block:Excerpt}
+                
+                {block:Host}
+                    <p class="link-url">{Host}</p>
+                {/block:Host}
+            </div>
+        </a>
+            
+            {block:Reblogs}
+                {block:isOriginalEntry}
+                    {block:Description}
+                        <div class="caption-inner">
+                            {Body}
+                        </div>
+                    {/block:Description}
+                {/block:isOriginalEntry}
+                
+                {block:isNotOriginalEntry}
+                    <div class="caption-inner-reblogs">
+                        <div class="tumblr_blog">    
+                            <img class="tumblr_avatar" src="{PortraitURL-64}">
+                            <a {block:IsActive}href="{Permalink}"{/block:IsActive}>{Username}</a>
+                            {block:IsDeactivated}
+                                <span class="deactivated">deactivated</span>
+                            {/block:IsDeactivated}
+                        </div>
+                                    
+                        {Body}
+                    </div>
+                {/block:isNotOriginalEntry}
+            {/block:Reblogs}
+        {/block:RebloggedFrom}
+    
+    
+    
+</div>
+{/block:Link}
+
+{block:Chat}
+<!-- post type: chat -->
+<div class="caption">
+
+    {block:NotReblog}
+        <hr>
+        
+        <div class="tumblr_blog">    
+            <img class="tumblr_avatar" src="{PortraitURL-64}">
+            <a href="{Permalink}">{Name}</a>
+        </div>
+    {/block:NotReblog}
+    
+    {block:RebloggedFrom}
+        <hr>
+        
+        <div class="tumblr_blog"> 
+            <img class="tumblr_avatar" src="{ReblogRootPortraitURL-64}">
+            <a {block:IsActive}href="{Permalink}"{/block:IsActive}>{ReblogRootName}</a>
+            {block:IsDeactivated}
+                <span class="deactivated">deactivated</span>
+            {/block:IsDeactivated}
+        </div>
+    {/block:RebloggedFrom}
+
+
+    {block:Title}
+        <div class="title">{Title}</div>
+    {/block:Title}
+   
+    <div class="chat">
+        {block:Lines}
+            <p>{block:Label}<b class="label">{Label}</b>{/block:Label} {Line}</p>
+        {/block:Lines}
+    </div>
+</div>
+{/block:Chat}
+
+{block:Audio}
+<!-- post type: audio -->
+
+<div class="caption">
+        {block:NotReblog}
+            <hr>
+            
+            <div class="tumblr_blog">    
+                <img class="tumblr_avatar" src="{PortraitURL-64}">
+                <a href="{Permalink}">{Name}</a>
+            </div>
+            
+            <div class="audio">
+            
+                <div class="audio-cover" {block:AlbumArt}style="background-image:url('{AlbumArtURL}');"{/block:AlbumArt}></div>
+                
+                <div class="audio-text">
+                    {block:TrackName}
+                        <div class="audio-text-song">
+                            {TrackName}
+                        </div>
+                    {/block:TrackName}
+                    
+                    {block:Artist}
+                        <div class="audio-text-artist">
+                            {Artist}
+                        </div>
+                    {/block:Artist}
+                    
+                    {block:Album}
+                        <div class="audio-text-album">
+                            {Album}
+                        </div>
+                    {/block:Album}
+                </div>
+        
+                
+                {block:AudioPlayer}
+                	{AudioPlayer}
+                	
+                	<div class="audio_player">
+                		{audio:Seekbar}
+                		
+                		<div class="audio_player-time">
+                    		{audio:CurrentPlayTime}
+                    		{audio:PlayTimeLeft}
+                		</div>
+                		
+                		<div class="audio_player-buttons">
+                		    <i class="ti ti-heart"></i>
+                		    <i class="ti ti-player-track-prev"></i>
+                		    {audio:AudioButtons}
+                		    <i class="ti ti-player-track-next"></i>
+                		    <i class="ti ti-volume"></i>
+                		</div>
+                		
+                	</div>
+                	{/block:AudioPlayer}
+                
+            </div>
+            
+            {block:Caption}
+                <div class="caption-inner">
+                    {Caption}
+                    
+                    {block:More}
+                        <p>
+                            <a href="{Permalink}">Keep reading</a>
+                        </p>
+                    {/block:More}
+                </div>
+            {/block:Caption}
+        {/block:NotReblog}
+    
+        {block:RebloggedFrom}
+            <hr>
+            
+            <div class="tumblr_blog"> 
+                <img class="tumblr_avatar" src="{ReblogRootPortraitURL-64}">
+                <a href="{Permalink}">{ReblogRootName}</a>
+            </div>
+                    
+            <div class="audio">
+            
+                <div class="audio-cover" {block:AlbumArt}style="background-image:url('{AlbumArtURL}');"{/block:AlbumArt}></div>
+                
+                <div class="audio-text">
+                    {block:TrackName}
+                        <div class="audio-text-song">
+                            {TrackName}
+                        </div>
+                    {/block:TrackName}
+                    
+                    {block:Artist}
+                        <div class="audio-text-artist">
+                            {Artist}
+                        </div>
+                    {/block:Artist}
+                    
+                    {block:Album}
+                        <div class="audio-text-album">
+                            {Album}
+                        </div>
+                    {/block:Album}
+                </div>
+        
+                
+                {block:AudioPlayer}
+                	{AudioPlayer}
+                	
+                	<div class="audio_player">
+                		{audio:Seekbar}
+                		
+                		<div class="audio_player-time">
+                    		{audio:CurrentPlayTime}
+                    		{audio:PlayTimeLeft}
+                		</div>
+                		
+                		<div class="audio_player-buttons">
+                		    <i class="ti ti-heart"></i>
+                		    <i class="ti ti-player-track-prev"></i>
+                		    {audio:AudioButtons}
+                		    <i class="ti ti-player-track-next"></i>
+                		    <i class="ti ti-volume"></i>
+                		</div>
+                		
+                	</div>
+                	{/block:AudioPlayer}
+                
+            </div>
+            
+            {block:Reblogs}
+                {block:isOriginalEntry}
+                    {block:Caption}
+                        <div class="caption-inner">
+                            {Body}
+                        </div>
+                    {/block:Caption}
+                {/block:isOriginalEntry}
+                
+                {block:isNotOriginalEntry}
+                    <div class="caption-inner-reblogs">
+                        <div class="tumblr_blog">    
+                            <img class="tumblr_avatar" src="{PortraitURL-64}">
+                            <a {block:IsActive}href="{Permalink}"{/block:IsActive}>{Username}</a>
+                            {block:IsDeactivated}
+                                <span class="deactivated">deactivated</span>
+                            {/block:IsDeactivated}
+                        </div>
+                                    
+                        {Body}
+                    </div>
+                {/block:isNotOriginalEntry}
+            {/block:Reblogs}
+        {/block:RebloggedFrom}
+    </div>
+    
+{/block:Audio}
+
+{block:Video}
+<!-- post type: video -->
+    <div class="caption">
+        {block:NotReblog}
+            <hr>
+            
+            <div class="tumblr_blog">    
+                <img class="tumblr_avatar" src="{PortraitURL-64}">
+                <a href="{Permalink}">{Name}</a>
+            </div>
+            
+            <div class="video">{Video-500}</div>
+            
+            {block:Caption}
+                <div class="caption-inner">
+                    {Caption}
+                    
+                    {block:More}
+                        <p>
+                            <a href="{Permalink}">Keep reading</a>
+                        </p>
+                    {/block:More}
+                </div>
+            {/block:Caption}
+        {/block:NotReblog}
+    
+        {block:RebloggedFrom}
+            <hr>
+            
+            <div class="tumblr_blog"> 
+                <img class="tumblr_avatar" src="{ReblogRootPortraitURL-64}">
+                <a href="{Permalink}">{ReblogRootName}</a>
+            </div>
+                    
+            <div class="video">{Video-500}</div>
+            
+            {block:Reblogs}
+                {block:isOriginalEntry}
+                    {block:Caption}
+                        <div class="caption-inner">
+                            {Body}
+                        </div>
+                    {/block:Caption}
+                {/block:isOriginalEntry}
+                
+                {block:isNotOriginalEntry}
+                    <div class="caption-inner-reblogs">
+                        <div class="tumblr_blog">    
+                            <img class="tumblr_avatar" src="{PortraitURL-64}">
+                            <a {block:IsActive}href="{Permalink}"{/block:IsActive}>{Username}</a>
+                            {block:IsDeactivated}
+                                <span class="deactivated">deactivated</span>
+                            {/block:IsDeactivated}
+                        </div>
+                                    
+                        {Body}
+                    </div>
+                {/block:isNotOriginalEntry}
+            {/block:Reblogs}
+        {/block:RebloggedFrom}
+    </div>
+{/block:Video}
+
+{block:Answer}
+<!-- post type: ask -->
+<div class="caption">
+    <hr>
+    
+    <div class="question-c">
+        
+    
+        <div class="question">
+            
+            <div class="question-asker-c">
+                <div class="question-img">
+                    <img src="{AskerPortraitURL-128}">
+                </div>
+                
+                <div class="question-asker">
+                    <b>{Asker}</b>
+                    <span>asked</span>
+                </div>
+            </div>
+            
+            <div class="question-content">
+                {Question}
+            </div>
+        </div>
+    </div>
+    
+    {block:Answerer}
+        <div class="answer-c">
+            <div class="answer">
+            
+                <div class="answer-asker-c">
+                    <div class="answer-asker">
+                        <b>{Answerer}</b>
+                        <span>answered</span>
+                    </div>
+                    
+                    <div class="answer-img">
+                        <img src="{AnswererPortraitURL-64}">
+                    </div>
+                </div>
+            
+                <div class="answer-content">
+                    {Answer}
+                </div>
+            </div>
+        </div>
+        
+        {block:Reblogs}
+            {block:isOriginalEntry}
+                <hr>
+                
+                <div class="tumblr_blog"> 
+                    <img class="tumblr_avatar" src="{ReblogRootPortraitURL-64}">
+                    <a {block:IsActive}href="{Permalink}"{/block:IsActive}>{ReblogRootName}</a>
+                    {block:IsDeactivated}
+                        <span class="deactivated">deactivated</span>
+                    {/block:IsDeactivated}
+                </div>
+                
+                {block:Body}
+                    <div class="caption-inner">
+                        {Body}
+                    </div>
+                {/block:Body}
+            {/block:isOriginalEntry}
+                
+            {block:isNotOriginalEntry}
+                <hr>
+                    
+                <div class="caption-inner">
+                    <div class="tumblr_blog">    
+                        <img class="tumblr_avatar" src="{PortraitURL-64}">
+                        <a {block:IsActive}href="{Permalink}"{/block:IsActive}>{Username}</a>
+                        {block:IsDeactivated}
+                            <span class="deactivated">deactivated</span>
+                        {/block:IsDeactivated}
+                    </div>
+                                    
+                    {Body}
+                </div>
+            {/block:isNotOriginalEntry}
+        {/block:Reblogs}
+        
+        
+    {/block:Answerer}
+    {block:NotReblog}
+    
+         <div class="answer-c">
+            <div class="answer">
+            
+                <div class="answer-asker-c">
+                    <div class="answer-asker">
+                        <b>{Name}</b>
+                        <span>answered</span>
+                    </div>
+                    
+                    <div class="answer-img">
+                        <img src="{PortraitURL-64}">
+                    </div>
+                </div>
+            
+                <div class="answer-content">
+                    {Replies}
+                </div>
+            </div>
+        </div>
+        {/block:NotReblog}
+</div>
+{/block:Answer}
+
+<!-- post info -->
+
+{block:Submission}
+    <div class="submitted">
+        <div class="tumblr_blog">    
+            <img class="tumblr_avatar" src="{SubmitterPortraitURL-64}">
+            <i>submitted by</i> &nbsp; <a href="{SubmitterURL}">{Submitter}</a>
+        </div>
+    </div>
+{/block:Submission}
+
+
+{block:Date}
+    <div style="clear:both;"></div>
+    
+    <div class="post-date">
+        <div class="date-left">
+            {block:NoteCount}
+                <a href="{Permalink}">{NoteCountWithLabel}</a>
+            {/block:NoteCount}
+        </div>
+        
+        <div class="date-right">
+            <a href="{ReblogURL}" title="reblog">
+                <i class="ti ti-repeat"></i>
+            </a>
+            <a href="#" class="like" title="like">{LikeButton}
+                <i class="ti ti-heart"></i>
+            </a>
+        </div>
+        
+        {block:HasTags}
+            <div class="tags-c">
+                {block:Tags} <a href="{TagURL}" class="tags">#{Tag}</a>{/block:Tags}
+            </div>
+        {/block:HasTags}
+    </div>
+            
+        
+        
+        {block:PermalinkPage}
+            
+            <div class="date-perma">
+                {block:RebloggedFrom}
+                    <div class="date-perma-blocks">
+                        <i class="ti ti-repeat"></i>
+                        <i>reblogged from: <a href="{ReblogParentURL}">{ReblogParentName}</a></i>
+                    </div>
+                {/block:RebloggedFrom}
+                
+                {block:ContentSource}
+                    <div class="date-perma-blocks">
+                        <i class="ti ti-ballpen"></i>
+                        <i>content source: <a href="{SourceURL}">{SourceTitle}</a></i>
+                    </div>
+                    
+                {/block:ContentSource}
+          </div> 
+        
+        {/block:PermalinkPage}
+    
+{/block:Date}
+
+</div> <!-- end of post -->
+
+<!-- page notes -->
+
+{block:Date}
+    {block:PermalinkPage}
+        {block:PostNotes}
+            <div class="pagenotes">
+                <h1>{NoteCountWithLabel}</h1>
+            
+                {PostNotes-64}
+            </div>
+        {/block:PostNotes}
+    {/block:PermalinkPage}
+{/block:Date}
+
+</article>
+
+{/block:Posts}
+
+{block:Pagination}
+    <div class="pagination">
+        {block:PreviousPage}
+            <a href="{PreviousPage}">
+                <i class="ti ti-chevron-left"></i>
+                previous page
+            </a>
+        {/block:PreviousPage}
+        
+        {block:NextPage}
+            <a href="{NextPage}">
+                next page
+                <i class="ti ti-chevron-right"></i>
+            </a>
+        {/block:NextPage}
+    </div>
+{/block:Pagination}
+
+</div> <!-- end of entries -->
+
+
+</div> <!-- end of container -->
+
+
+<a class="credit" href="https://pirateskinned.tumblr.com/" title="theme by pirateskinned">
+    <i class="ti ti-ghost"></i>
+</a>
+
+</body></html>
