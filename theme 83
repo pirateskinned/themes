@@ -758,6 +758,7 @@ video, .video, .video iframe {
 
 .spotify_audio_player {
     height:80px;
+    width:100%;
 }
 
 /* --- asks --- */
