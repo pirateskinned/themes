@@ -766,6 +766,11 @@ video, .video, .video iframe {
             background-size:cover;
         }
 
+.spotify_audio_player {
+    height:80px;
+    width:100%;
+}
+
 /* --- asks --- */
 
 .question-c, .answer-c {
