@@ -240,8 +240,8 @@ a {
         text-decoration:none;
     }
     
-p a, .description a {box-shadow:{color:link} 0px -1px 0px inset;}
-p a:hover, .description a:hover {box-shadow:{color:link} 0px -17px 0px inset;}
+p a, .sidebar .description a {box-shadow:{color:link} 0px -1px 0px inset;}
+p a:hover, .sidebar .description a:hover {box-shadow:{color:link} 0px -17px 0px inset;}
 
 img {
     border:none;
@@ -419,7 +419,7 @@ h2 {
     background:{color:posts};
 }
 
-.description {
+.sidebar .description {
     position:absolute;
     top:130px;
     left:-20px;
