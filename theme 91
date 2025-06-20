@@ -871,7 +871,10 @@ h5 {
         
         <div class="topbar-right">
             <div class="topbar-right-links">
-                
+                <a href="https://pirateskinned.tumblr.com/" title="theme by pirateskinned">
+                    <i class="ti ti-code"></i>
+                </a>
+
                 <a href="{text:topbar link 1 url}" title="{text:topbar link 1 title}">
                     <i class="ti ti-flower"></i>
                 </a>
@@ -887,7 +890,6 @@ h5 {
                 <a href="{text:topbar link 4 url}" title="{text:topbar link 4 title}">
                     <i class="ti ti-menu-deep"></i>
                 </a>
-                
             </div>
         </div>
     </div>
